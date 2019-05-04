@@ -1,5 +1,6 @@
 <?php
     include('connect.php');
+    $input = file_get_contents("php://input");
     $obj = json_decode($input);
     if($input!=null){
         echo "got : \n".var_dump($obj);
