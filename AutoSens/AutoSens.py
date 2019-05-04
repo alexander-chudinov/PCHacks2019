@@ -26,3 +26,5 @@ if (state == 1):
 file = open("data.txt", "w")
 file.write("%f,%f,%f" %(lo, hi, vl))
 file.close()
+
+print(vl)
