@@ -1,4 +1,5 @@
 <?php
+    include('connect.php');
     $sql = "SELECT gx,gy,gz FROM raw_data";
     $result = $dbcon->query($sql);
     $response = "";
