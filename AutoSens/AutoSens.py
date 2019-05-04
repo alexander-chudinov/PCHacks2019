@@ -1,6 +1,5 @@
 #state: -1 too low (detects random stuff), 0 perfect, 1 too high (did not detect)
 state = 0
-python fn.py 1 2 3
 
 import sys
 if __name__ == '__main__':
