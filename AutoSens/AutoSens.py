@@ -1,5 +1,12 @@
 #state: -1 too low (detects random stuff), 0 perfect, 1 too high (did not detect)
 state = 0
+
+import sys
+if __name__ == '__main__':
+	lo = float(sys.argv[1])
+	hi = float(sys.argv[2])
+	vl = float(sys.argv[3])
+
 file = open("data.txt", "r")
 data = file.read()
 file.close()
@@ -8,9 +15,6 @@ lo, hi, vl = data.split(",")
 #hi is upper bound, lo is lower bound, vl is magnitude of acceleration = cube_root(ax^2+ay^2+ax^2)
 #initially, lo = 0, hi = 10, vl = 20
 
-lo = float(lo)
-hi = float(hi)
-vl = float(vl)
 
 if (state == 0):
 	exit()
