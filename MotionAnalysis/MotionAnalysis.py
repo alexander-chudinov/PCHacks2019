@@ -16,12 +16,12 @@ gz = []
 
 for i in range(0, len(tri)):
 	t = tri[i].split(",")
-	ax.append(float(t[0]))
-	ay.append(float(t[1]))
-	az.append(float(t[2]))
-	gx.append(float(t[3]))
-	gy.append(float(t[4]))
-	gz.append(float(t[5]))
+	ax.append(float(t[0])/16384*9.81)
+	ay.append(float(t[1])/16384*9.81)
+	az.append(float(t[2])/16384*9.81)
+	gx.append(float(t[3])/131)
+	gy.append(float(t[4])/131)
+	gz.append(float(t[5])/131)
 
 def integrate(li):
 	rl = [li[0]]
@@ -42,7 +42,7 @@ for i in range(0, len(ax)):
 	tr1 = quat(axis=[1, 0, 0], angle=angx[i])
 	tr2 = quat(axis=[0, 1, 0], angle=angy[i])
 	tr3 = quat(axis=[0, 0, 1], angle=angz[i])
-	g_vec = tr1.rotate(tr2.rotate(tr3.rotate([0, 0, 9.81])))
+	g_vec = tr1.rotate(tr2.rotate(tr3.rotate([0, 0, -9.81])))
 	ax[i] = ax[i] - g_vec[0]
 	ay[i] = ay[i] - g_vec[1]
 	az[i] = az[i] - g_vec[2]
